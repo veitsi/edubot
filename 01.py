@@ -4,7 +4,7 @@ import telebot
 greeting = "Bonjour, mon ami. "
 help_message = '''
 HOT NEWS - first task is already here. use /task to get it
-my Boss mr.Feldman is waiting for You here today(30-th of May) at 20:00. He will try to answer your questions about this course. An will declare program for first module
+my Boss mr.Feldman is waiting for You here today(30-th of May) at 20:00. He will try to answer your questions about this course. And will declare program for first module
 about me: I am bot and my mission is to serve people, help you to grow in python.
 '''
 task='''
@@ -17,6 +17,25 @@ keep url to your version. later I will ask this link as your first task
 if any question-please use this chat
 best regards, Serg Feldman
 '''
+program = '''
+Course program. Unit 1
+Short introduction in python
+Python Syntax. Writing hello world program
+Comments, how to care about program reader
+Numbers – Integer and Float, how to calculate using python
+Strings – how to process words
+Console Output – how to interact with users
+Conditionals & Control Flow – how programs make their decisions
+Functions – how to write  reusable and testable pieces of programs
+
+main manual for this unit - “A Byte of Python” by  Swaroop Chitlur https://www.gitbook.com/book/swaroopch/byte-of-python/
+there is a russian translation http://wombat.org.ua/AByteOfPython/
+'''
+
+faq='''
+
+'''
+
 eating_time=False
 
 bot = telebot.TeleBot(token)
@@ -30,6 +49,10 @@ def repeat_all_messages(message):  # Название функции не игр
         bot.send_message( message.chat.id,greeting + help_message)
     elif "/task" in message.text:
         bot.send_message( message.chat.id,greeting + task)
+    elif "/program" in message.text:
+        bot.send_message( message.chat.id,greeting + program)
+    elif "/faq" in message.text:
+        bot.send_message( message.chat.id,greeting + program)
     elif "/bon_appetit" in message.text:
         if eating_time:
             bot.send_message(message.chat.id, "Merci, mon ami")
