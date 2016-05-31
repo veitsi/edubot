@@ -1,6 +1,7 @@
 # this program is not absolutelly proper and calculates hours
 # when all months has 30 days. real months have different days number
 # but it is not so important in our case
+
 print ("my name is Sergio Feldman")
 print ("I have a crazy dream to teach programming all people in Ukraine")
 hours_per_workingday = 3
